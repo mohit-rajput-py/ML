@@ -19,6 +19,8 @@ def read_structure(root_path):
         return structure
 
     for item in items:
+        if item.startswith("."):
+            continue
         path = os.path.join(root_path, item)
         if os.path.isdir(path):
             try:
